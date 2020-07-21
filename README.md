@@ -11,6 +11,6 @@ PS: the code is in its beta version.
 
 # How To:
 
-its a commandline tools:
+its a commandline tool:
 
-python aaCharge.py <peptide sequence>
+python3 mpmup.py -p [name] [ref] [position] [alt]
