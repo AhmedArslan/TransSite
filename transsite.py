@@ -1,5 +1,3 @@
-
-
 #!/usr/bin/env pypy3 python3
 
 #1 predict net charge
@@ -14,9 +12,7 @@ position = sys.argv[3]
 aa2 = sys.argv[4]
 
 def netcharge(seq):
-	#Set a starting value for the amino acid charge (charge)
    charge = -0.002
-   #Set a dictionary (AACharge) with the values of net charge for each charged amino acid.
    AACharge={"C":-.045,"D":-.999,"E":-.998,"H":.091\
             ,"K":1,"R":1,"Y":-.001}
    for aa in seq:
@@ -25,8 +21,6 @@ def netcharge(seq):
       else:
          pass
    return charge
-   # print('Net charge:',round(charge))
-
 
 #2 predict_isoelectric_point
 
@@ -96,22 +90,20 @@ promost_mid = {
 "R":[6.76, 3.41],
 "Y":[6.83, 3.60],
 "W":[7.11, 3.78],
-"X":[7.26, 3.57],   #avg
-"Z":[6.96, 3.535],  #("E"+"Q")/2
-'B':[7.46, 3.57],   #("N"+"D")/2
+"X":[7.26, 3.57], 
+"Z":[6.96, 3.535], 
+'B':[7.46, 3.57],  
 'U':[5.20, 5.60], 
 'O':[7.00, 3.50],     
 }
 
-#sample_protein_sequence = 'MKKMQSIVLALSLVLVAPMAAQAAEITLVPSVKLQIGDRDNRGYYWDGGHWRDHGWWKQHYEWRGNRWHLHGPPPPPRHHKKAPHDHHGGHGPGKHHR'
-
 def predict_isoelectric_point_ProMoST(seq):
     '''Calculate isoelectric point using ProMoST model'''
     NQ = 0.0
-    pH = 6.51             #starting po pI = 6.5 - theoretically it should be 7, but average protein pI is 6.5 so we increase the probability of finding the solution
+    pH = 6.51             
     pHprev = 0.0         
     pHnext = 14.0        
-    E = 0.01             #epsilon means precision [pI = pH +- E]
+    E = 0.01            
     temp = 0.01
     while 1:
             if seq[0] in promost.keys():   QN1=-1.0/(1.0+pow(10,(promost[seq[0]][2]-pH)))
@@ -129,19 +121,19 @@ def predict_isoelectric_point_ProMoST(seq):
             QP4= seq.count('R')/(1.0+pow(10,(pH-promost['R'][1])))                
         
             NQ=QN1+QN2+QN3+QN4+QN5+QP1+QP2+QP3+QP4  
-#%%%%%%%%%%%%%%%%%%%%%%%%%   BISECTION   %%%%%%%%%%%%%%%%%%%%%%%%
-            if NQ<0.0:              #we are out of range, thus the new pH value must be smaller                     
+
+            if NQ<0.0:                                
                     temp = pH
                     pH = pH-((pH-pHprev)/2.0)
                     pHnext = temp
-                    #print "pH: ", pH, ", \tpHnext: ",pHnext
+                  
             else:
                     temp = pH
                     pH = pH + ((pHnext-pH)/2.0)
                     pHprev = temp
-                    #print "pH: ", pH, ",\tpHprev: ", pHprev
+                   
 
-            if (pH-pHprev<E) and (pHnext-pH<E): #terminal condition, finding pI with given precision
+            if (pH-pHprev<E) and (pHnext-pH<E): 
                     return pH         
 
 #3 molecular_weight
@@ -157,21 +149,19 @@ def calculate_molecular_weight(seq):
     for aa in seq:
             molecular_weight+=massDict[aa]       
     return molecular_weight
-    #
-
 
 #4 biochemical properties
 
 def blo(aa1, aa2):
-  with open("/Users/aarslan/Desktop/MTSignal-Peptide-project/Blosum62.txt") as bp:
+  with open("/path/to/Blosum62.txt") as bp:
     for p in bp:
       p = p.rstrip().split('\t')
       if p[0] == aa1 and p[-1] == aa2:
         return p[0], "to", p[-1], p[1]
 
 def mts(protein, aa1, position, aa2):
-  # print("Biochemical properties change from: ", blo(aa1, aa2))
-  files = glob.glob("/Users/aarslan/Desktop/MTSignal-Peptide-project/conservation_mouse3/*")
+	
+  files = glob.glob("/path/to/conservation_mouse3/*")
   for f in files:
     f1 = f.split('/')
     f2 = f1[-1].split(".")
@@ -186,8 +176,6 @@ def mts(protein, aa1, position, aa2):
         for j in ij.readlines()[0:]:
           j = j.rstrip().split('\t')
           if position == j[0] and aa1 == j[1]:
-            # print(''.join(j[-1]))
-            # print(i[0][int(j[0])-2]+aa2+i[0][int(j[0]):-1])
             s = i[0][int(j[0])-2]+aa2+i[0][int(j[0]):-1]
             print(s)
             print('Variant form Net charge:',round(netcharge(s)))
@@ -202,21 +190,9 @@ def mts(protein, aa1, position, aa2):
               print('higly conserveted site: ' +j[-1]+ " score")
 
 
-
-
-# def togehter(seq):
-
-# 	print("Isoelectric point:", predict_isoelectric_point_ProMoST(seq))
-# 	calculate_molecular_weight(seq)
-# 	netcharge(seq)
-
-
 if __name__=='__main__':
 
-  # mts("Aadat", 'N', "2", "P")
-# TODO commedline
   import argparse
-  # p = Pool()
   sys.setrecursionlimit(2000)
 
   parser = argparse.ArgumentParser()
@@ -227,20 +203,14 @@ if __name__=='__main__':
   parser.add_argument('-alt', '--alteration',  required=True, help='altered amino acid is missing')
   args = vars(parser.parse_args())
 
-  # args = parser.parse_args()
   if args:
     try:
       mts(protein, aa1, position, aa2)
-      # genefile =  [f for f in glob.glob(os.path.join("*.txt")) if f.endswith(sys.argv[-1])]
-      # p.map(mts, sys.argv[2])
-      # p.close()
-      # p.join()
+
     except IOError:
       pass
   else:
     print ("to run MP-Mup seek help")
-    #Molecular Transportation via mutational Upshot (MP-MUp)
-    # https://e.sfcu.org/sfcuonline/uux.aspx#/login/interstitial
+    #Molecular Transportation via mutational Upshot (MP-MUp)?
 
     #python3 mpmup.py -p [name] [ref] [position] [alt]
-
