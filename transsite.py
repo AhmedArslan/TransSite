@@ -4,12 +4,15 @@
 
 import glob
 import sys
-# seq = sys.argv[1]
 
-protein = sys.argv[1]
-aa1 = sys.argv[2]
-position = sys.argv[3]
-aa2 = sys.argv[4]
+try:
+	protein = sys.argv[1]
+	aa1 = sys.argv[2]
+	position = sys.argv[3]
+	aa2 = sys.argv[4]
+except IndexError:
+  print('\nTransSite required: \nProtein name <e.g. replace [protein name] arg with Nrxn1>\nReference amino acid <e.g. replace [ref allele] arg with G>\nAlteration amino acid <e.g.replace [alt allele] arg with R> \nPosition <e.g.replace [SNP position] arg with 12> \n$ python3 ./transSite.py -p [protein name] [ref allele] [SNP position] [alt allele]')
+  pass
 
 def netcharge(seq):
    charge = -0.002
@@ -206,11 +209,9 @@ if __name__=='__main__':
   if args:
     try:
       mts(protein, aa1, position, aa2)
-
-    except IOError:
+    except NameError:
       pass
   else:
-    print ("to run MP-Mup seek help")
-    #Molecular Transportation via mutational Upshot (MP-MUp)?
+    pass
 
-    #python3 mpmup.py -p [name] [ref] [position] [alt]
+    #python3 ./transSite.py -p [protein name] [ref allele] [SNP position] [alt allele]
