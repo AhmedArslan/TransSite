@@ -17,32 +17,33 @@ PS: the code is in its beta version.
     
   ## conda
       
-      conda install transsite
+    conda install transsite
 
   ## docker
   
   ## source code
   
-      git clone https://github.com/AhmedArslan/TransSite.git
+    git clone https://github.com/AhmedArslan/TransSite.git
 
 # usage
 
   ## single protein entry:
   
-       transsite <protein> <ref> <position> <mut>
+     transsite <protein> <ref> <position> <mut>
        
-       e.g. 
+     e.g. 
        
-       transsite Lactb M 1 S
+     transsite Lactb M 1 S
   ## file:
-      tab sepated file with the same format as the single protien entry i.g. <protein> <ref> <position> <mut>
+     tab sepated file with the same format as the single protien entry i.g. <protein> <ref> <position> <mut>
  
  # output
  
     <protein> <mutation-position> <charge-difference> <molecular-weight-difference> <substitutaion-score> <conservation-score> <prediction>
     
  # contact:
-    if you run into any problem do raise an "issue", also see wiki for proper use and parameters or contact at aarslan@stanford.edu
+ 
+ if you run into any problem do raise an "issue", also see wiki for proper use and parameters or contact at aarslan@stanford.edu
  
  # cite
  
