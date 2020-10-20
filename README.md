@@ -9,8 +9,44 @@ in the protien transportation, and provide a collective change value in these pa
 
 PS: the code is in its beta version.
 
-# How To:
+# Installation
 
-its a commandline tool:
+  ## pip
 
-python3 mpmup.py -p [name] [ref] [position] [alt]
+    pip install transsite
+    
+  ## conda
+      
+      conda install transsite
+
+  ## Docker
+  
+  ## source code
+  
+      git clone https://github.com/AhmedArslan/TransSite.git
+
+# Usage
+
+  ## single protein entry:
+  
+       transsite <protein> <ref> <position> <mut>
+       
+       e.g. 
+       
+       transsite Lactb M 1 S
+  ## file:
+      tab sepated file with the same format as the single protien entry i.g. <protein> <ref> <position> <mut>
+ 
+ # Output
+ 
+    <protein> <mutation-position> <charge-difference> <molecular-weight-difference> <substitutaion-score> <conservation-score> <prediction>
+    
+ # contact:
+ 
+    aarslan@stanford.edu
+ 
+ # Cite
+ 
+ if you use this tool, please cite: 
+ 
+  
