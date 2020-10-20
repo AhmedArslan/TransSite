@@ -35,7 +35,7 @@ PS: the code is in its beta version.
        
     transsite Lactb M 1 S
   ## file:
-     tab sepated file with the same format as the single protien entry i.g. <protein> <ref> <position> <mut>
+    tab sepated file with the same format as the single protien entry i.g. <protein> <ref> <position> <mut>
  
  # output
  
