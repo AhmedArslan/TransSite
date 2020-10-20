@@ -9,7 +9,7 @@ in the protien transportation, and provide a collective change value in these pa
 
 PS: the code is in its beta version.
 
-# Installation
+# installation
 
   ## pip
 
@@ -19,13 +19,13 @@ PS: the code is in its beta version.
       
       conda install transsite
 
-  ## Docker
+  ## docker
   
   ## source code
   
       git clone https://github.com/AhmedArslan/TransSite.git
 
-# Usage
+# usage
 
   ## single protein entry:
   
@@ -37,7 +37,7 @@ PS: the code is in its beta version.
   ## file:
       tab sepated file with the same format as the single protien entry i.g. <protein> <ref> <position> <mut>
  
- # Output
+ # output
  
     <protein> <mutation-position> <charge-difference> <molecular-weight-difference> <substitutaion-score> <conservation-score> <prediction>
     
