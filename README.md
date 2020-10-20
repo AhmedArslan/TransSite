@@ -42,10 +42,9 @@ PS: the code is in its beta version.
     <protein> <mutation-position> <charge-difference> <molecular-weight-difference> <substitutaion-score> <conservation-score> <prediction>
     
  # contact:
+    if you run into any problem do raise an "issue", also see wiki for proper use and parameters or contact at aarslan@stanford.edu
  
-    aarslan@stanford.edu
- 
- # Cite
+ # cite
  
  if you use this tool, please cite: 
  
