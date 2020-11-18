@@ -13,7 +13,7 @@ PS: the code is in its beta version.
 
   ## pip
 
-    pip install transsite
+    pip install -i https://test.pypi.org/simple/ --target=/path/where/to/install/ transsite && cd transsite
     
   ## conda
       
