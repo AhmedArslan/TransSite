@@ -47,6 +47,6 @@ PS: the code is in its beta version.
  
  # cite
  
- if you use this tool, please cite: 
+ if you use this tool, please cite: Protein Cargo Assessment through Residue Alterations. Ahmed Arslan. bioRxiv 2020.11.20.387738; doi: https://doi.org/10.1101/2020.11.20.387738
  
   
