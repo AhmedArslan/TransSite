@@ -29,11 +29,11 @@ PS: the code is in its beta version.
 
   ## single protein:
   
-    transsite <protein> <ref> <position> <mut>
+    transsite.py <protein> <ref> <position> <mut>
        
      e.g. 
        
-    transsite Lactb M 1 S
+    transsite.py Lactb M 1 S
   ## file:
     tab sepated file with the same format as the single protien entry i.g. <protein> <ref> <position> <mut>
  
