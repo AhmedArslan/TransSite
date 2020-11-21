@@ -1,5 +1,5 @@
 # TransSite
-predicting the change in protein transport-sequence activity upon the presence of genetic variations. (beta)
+predicting the change in protein transport-sequence activity upon the presence of genetic variations.
 
 The presence of single residue mutations in the protein localisation peptides have not discussed or analysed at length. We have created a python code, 
 
@@ -7,15 +7,13 @@ that take into account the change in the biochemical properties (including charg
 
 in the protien transportation, and provide a collective change value in these parameters in a simple yet effective way. 
 
-PS: the code is in its beta version.
-
 # installation
 
   ## pip
 
     pip install -i https://test.pypi.org/simple/ --target=/path/where/to/install/ transsite && cd transsite
     
-  ## conda
+  ## conda [TODO]
       
     conda install transsite
 
