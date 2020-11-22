@@ -33,7 +33,11 @@ in the protien transportation, and provide a collective change value in these pa
        
     transsite.py Lactb M 1 S
   ## input file:
-    tab sepated file with the same format as the single protien entry i.g. <protein> <ref> <position> <mut>
+    Lactb M 1 R
+    Lactb2 M  2 S
+    Lsr G 10  C
+    
+    (tab sepated file with the same format as the single protien entry i.g. <protein> <ref> <position> <mut>)
  
  # output
  
