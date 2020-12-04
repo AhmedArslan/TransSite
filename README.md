@@ -43,8 +43,7 @@ in the protien transportation, and provide a collective change value in these pa
  
  if you run into any problem do raise an "issue", also see wiki for proper use and parameters or contact at aarslan@stanford.edu
  
- # cite
- 
- if you use this tool, please cite: Protein Cargo Assessment through Residue Alterations. Ahmed Arslan. bioRxiv 2020.11.20.387738; doi: https://doi.org/10.1101/2020.11.20.387738
+ # Read more: 
+ Paper is under write up, here is the latest version: Protein Cargo Assessment through Residue Alterations. Ahmed Arslan. bioRxiv 2020.11.20.387738; doi: https://doi.org/10.1101/2020.11.20.387738
  
   
