@@ -19,10 +19,6 @@ in the protien transportation, and provide a collective change value in these pa
 
   ## docker [TODO]
   
-  ## source code
-  
-    git clone https://github.com/AhmedArslan/TransSite.git
-
 # usage
 
   ## single protein:
