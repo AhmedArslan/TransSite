@@ -13,7 +13,7 @@ in the protien transportation, and provide a collective change value in these pa
 
     pip install -i https://test.pypi.org/simple/ transsite --target=/path/where/to/install/ transsite && cd transsite
     
-  ## conda [TODO]
+  ## conda 
       
     conda install transsite
 
